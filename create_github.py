@@ -39,7 +39,7 @@ def main():
     
     credentials = pygit2.UserPass(user.email, ACCESS_TOKEN)
     callbacks=pygit2.RemoteCallbacks(credentials=credentials)
-    repoClone = pygit2.clone_repository(repo.clone_url, path,callbacks=callbacks)
+    repoClone = pygit2.clone_repository(repo.clone_url, os.path.join(path,repo.name),callbacks=callbacks)
     print(repo.git_url,repo.clone_url)
 
     repoClone.remotes.set_push_url("origin",repo.clone_url)
