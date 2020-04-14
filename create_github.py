@@ -22,12 +22,13 @@ def main():
     parser.add_argument(
         '-s', '--private', help='Add this to make repo private', action='store_true')
     parser.add_argument(
-        '-p', '--path', help="Root Path of the working folder", required=True)
+        '-p', '--path', help="Absolute Path of the working folder(if doesn't exit, creates it)", required=True)
     args = parser.parse_args()
 
     name, path, desc, private = args.name, args.path, args.description, args.private
     if desc == None:
         desc = ''
+        
     user = g.get_user()
 
     repo = user.create_repo(name, desc, private=private)
