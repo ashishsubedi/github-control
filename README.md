@@ -18,8 +18,8 @@ Easy to use github setup
 
 ## Automatically initialize repo
 
-1) Open cmd and type <code> create_github -n <NAME of REPO> -p <PATH TO CREATE> </code>.
-2) If you want to include description follow above code with <code> -d <DESCRIPTION </code>.  
+1) Open cmd and type <code> create_github -n [NAME of REPO] -p [ABSOLUTE PATH TO CREATE NEW REPO] </code>.
+2) If you want to include description follow above code with <code> -d [DESCRIPTION] </code>.  
 3) To make repo private, add <code> -s </code> to the above command.
   
 ## Enjoy. Feel free to response incase of any problem.
