@@ -1,3 +1,3 @@
 SET mypath=%~dp0
 
-python %mypath%\create_github.py python %*
+"C:\Users\Dell\Anaconda3\python.exe" %mypath%\create_github.py %*
