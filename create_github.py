@@ -48,6 +48,7 @@ def main():
             repo.clone_url, os.path.join(path, repo.name), callbacks=callbacks)
         repoClone.remotes.set_push_url("origin", repo.clone_url)
     else:
+        os.system('git init')
         localRepo = pygit2.Repository(os.path.join(path, name))
         localRepo.remotes.set_url('origin', repo.clone_url)
         index = localRepo.index
