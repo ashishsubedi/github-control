@@ -3,7 +3,8 @@
 Easy to use github setup
 
 # How to use
-## Make sure git-bash and python are already installed and configured as well
+### Works only on Windows.
+### Make sure git-bash and python are already installed and configured as well
 
 0. Clone or Download this repo
 1. Download following python packages using cmd
@@ -25,11 +26,11 @@ Easy to use github setup
 
 # Functionalities
 
-## Automatically initialize repo
+### Automatically initialize repo
 
 1. Open cmd and type <code> create_github -n [NAME of REPO] -p [ABSOLUTE PATH TO CREATE NEW REPO] </code>.
-# Donot put the working directory in the path
-## If your path doesn't contain the directory, it will be created with Readme.md. If you have directory with existing codebase, it will update the github with all those codes and initialize repo as well. 
+### Donot put the working directory in the path
+### If your path doesn't contain the directory, it will be created with Readme.md. If you have directory with existing codebase, it will update the github with all those codes and initialize repo as well. 
 2. If you want to include description follow above code with <code> -d [DESCRIPTION] </code>.
 3. To make repo private, add <code> -s </code> to the above command.
 
