@@ -5,6 +5,7 @@ import os
 import sys
 import argparse
 import base64
+import time
 
 g = Github(ACCESS_TOKEN)
 
@@ -40,26 +41,24 @@ def main():
 
     repo.create_file("Readme.md", commit_msg, content_msg)
 
-    credentials = pygit2.UserPass(user.email, ACCESS_TOKEN)
-    callbacks = pygit2.RemoteCallbacks(credentials=credentials)
-
     if(not repo_exist):
+        credentials = pygit2.UserPass(user.email, ACCESS_TOKEN)
+        callbacks = pygit2.RemoteCallbacks(credentials=credentials)
         repoClone = pygit2.clone_repository(
             repo.clone_url, os.path.join(path, repo.name), callbacks=callbacks)
         repoClone.remotes.set_push_url("origin", repo.clone_url)
     else:
-        os.system('git init')
-        localRepo = pygit2.Repository(os.path.join(path, name))
-        localRepo.remotes.set_url('origin', repo.clone_url)
-        index = localRepo.index
-        index.add_all()
-        index.write()
-        tree = index.write_tree()
-        author = pygit2.Signature(user.name, user.email)
-        localRepo.create_commit('refs/heads/master', author, author,
-                                "Initial Commit", tree, [localRepo.head.target])
-        remote = localRepo.remotes["origin"]
-        remote.push(['refs/heads/master'], callbacks=callbacks)
+
+        os.system(
+            f'cd {os.path.join(path,name)} && echo {content_msg} > Readme.md')
+        os.system(f'cd {os.path.join(path,name)} && git init')
+        os.system(f'cd {os.path.join(path,name)} && git add .')
+        os.system(
+            f'cd {os.path.join(path,name)} && git commit -m "Added All files"')
+        os.system(
+            f'cd {os.path.join(path,name)} && git remote add origin {repo.clone_url}')
+        os.system(
+            f'cd {os.path.join(path,name)} && git push -f -u origin master')
 
     print('[SUCCESSFULLY CREATED REPO]')
     print(repo.clone_url)
