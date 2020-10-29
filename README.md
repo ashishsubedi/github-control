@@ -3,7 +3,7 @@
 Easy to use github setup
 
 # How to use
-### Works only on Windows.
+### Updated for Windows and Linux (Should also work on MAC).
 ### Make sure git-bash and python are already installed and configured as well
 
 0. Clone or Download this repo
@@ -21,8 +21,9 @@ Easy to use github setup
 
 3. In create_github.bat file, update your python.exe location
 4. Go to windows environment variables and add new user or system path pointing to this downloaded repo location (https://docs.alfresco.com/4.2/tasks/fot-addpath.html)
+5. For Linux, <code> export PATH=$PATH:/path/to/github-control/</code>. For more information (https://opensource.com/article/17/6/set-path-linux)
 
-## Note: You may need to restart cmd for this to work.
+## Note: You may need to restart cmd/terminal for this to work.
 
 # Functionalities
 
