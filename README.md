@@ -23,13 +23,17 @@ Easy to use github setup
 4. Go to windows environment variables and add new user or system path pointing to this downloaded repo location (https://docs.alfresco.com/4.2/tasks/fot-addpath.html)
 5. For Linux, <code> export PATH=$PATH:/path/to/github-control/</code>. For more information (https://opensource.com/article/17/6/set-path-linux)
 
+## Note: For linux, executable permission should be given for create_github.sh using <code> sudo chmod 711 create_github.sh </code>
+
 ## Note: You may need to restart cmd/terminal for this to work.
 
 # Functionalities
 
 ### Automatically initialize repo
-
+## Windows
 1. Open cmd and type <code> create_github -n [NAME of REPO] -p [ABSOLUTE PATH TO CREATE NEW REPO] </code>.
+## Linux
+1. Open terminal and type <code> create_github.sh -n [NAME of REPO] -p [ABSOLUTE PATH TO CREATE NEW REPO] </code>.
 ### Donot put the working directory in the path
 ### If your path doesn't contain the directory, it will be created with Readme.md. If you have directory with existing codebase, it will update the github with all those codes and initialize repo as well. 
 2. If you want to include description follow above code with <code> -d [DESCRIPTION] </code>.
